@@ -1,0 +1,90 @@
+---
+title: "Orientation Computing Lab"
+author: "Jaihee Choi"
+date: '2022-08-15'
+output: pdf_document
+---
+
+This is a very simple tutorial for using RMarkdown
+
+\section*{How to output a plot}
+```{r ex1, echo=TRUE}
+# define x and y
+x <- 1:10
+y <- x^2
+
+#plot the points
+plot(x,y)
+```
+
+The plot above shows $y = x^2$.
+
+\newpage
+\section*{Utilizing the chunk options to display what you want}
+```{r ex2, echo= TRUE}
+a <- -1:10
+b <- log(a)
+
+print(b)
+```
+
+We want the above output without the warning
+```{r ex3, echo = TRUE, warning = FALSE}
+a <- -1:10
+b <- log(a)
+
+#print the results
+print(b)
+```
+
+\subsection*{Using real data}
+
+```{r ex4, echo = T, message = F, warning = F}
+# Fit the linear regression using the mtcars dataset
+fit <- lm(mpg ~ wt, data = mtcars)
+
+# print the coefficients
+fit$coefficients
+
+```
+
+Now print without the code showing:
+
+```{r ex5, echo = F, message = F, warning = F}
+# Fit the linear regression using the mtcars dataset
+fit <- lm(mpg ~ wt, data = mtcars)
+
+# print the coefficients
+fit$coefficients
+
+```
+
+
+
+\newpage
+
+\section*{Rmd syntax}
+
+The main text is the same as linux commands.\\
+For example, if I wanted to type an equation, I would use 
+\begin{verbatim}
+$$y = x^2$$
+\end{verbatim}
+
+which would look like 
+$$y = x^2$$
+If I wanted an equation intext, like $a^2 + b^2 = c^2$, I would just use '\$\$'. For example:
+\begin{verbatim}
+The Pythagorean Theorem is $a^2 + b^2 = c^2$.
+\end{verbatim}
+
+
+Latex is also very helpful for the ease of using symbols.
+For example, typing:
+\begin{verbatim}
+$\alpha, \beta, \delta, \Omega, \pi$
+\end{verbatim}
+
+Gives you $\alpha, \beta, \delta, \Omega, \pi$
+
+
